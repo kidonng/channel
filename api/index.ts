@@ -29,7 +29,8 @@ function processHTML(html: string) {
 
   // Note the selector is different after assets replacement
   for (const element of document.querySelectorAll(`
-    link[href^="/telegram.org/css/font-roboto.css"]
+    link[href^="/telegram.org/css/font-roboto.css"],
+    script[src^="https://oauth.tg.dev/js/telegram-widget.js"]
   `)) {
     element.remove()
   }
