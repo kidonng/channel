@@ -1,0 +1,17 @@
+{
+  "type": "module",
+  "packageManager": "pnpm@9.11.0+sha512.0a203ffaed5a3f63242cd064c8fb5892366c103e328079318f78062f24ea8c9d50bc6a47aa3567cabefd824d170e78fa2745ed1f16b132e16436146b7688f19b",
+  "scripts": {
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@whatwg-node/server": "^0.9.49",
+    "itty-router": "^5.0.18",
+    "linkedom": "^0.18.5"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^3.7.2",
+    "eslint": "^9.11.1",
+    "eslint-plugin-format": "^0.1.2"
+  }
+}
