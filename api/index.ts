@@ -8,7 +8,7 @@ function changeOrigin(url: string) {
   return url.replace(new URL(url).origin, 'https://t.me')
 }
 
-async function handler(url: string) {
+function handler(url: string) {
   return fetch(url)
     .then(response => response.text())
     .then(processHTML)
