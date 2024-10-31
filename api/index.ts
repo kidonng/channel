@@ -90,3 +90,7 @@ router.get('/i/emoji/:id', ({ url }) => fetch(changeOrigin(url)).then(response =
 ))
 
 export default createServerAdapter(router.fetch)
+
+export const config = {
+  runtime: 'edge',
+}
