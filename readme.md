@@ -12,5 +12,6 @@ Demo: [original](https://t.me/s/kichann) - [mirrored](https://post.xuann.wang)
 
 ## TODO
 
+- [ ] Cache requests/resources
 - [ ] Turn `background-image` into `<img>`
 - [ ] `loading=lazy` all `<img>`
