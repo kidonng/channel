@@ -1,8 +1,8 @@
-# Post
+# Channel
 
 > Lite Telegram channel mirror
 
-Demo: [original](https://t.me/s/kichann) - [mirrored](https://post.xuann.wang)
+Demo: [original](https://t.me/s/kichann) - [mirrored](https://channel.xuann.wang)
 
 ## Features
 
