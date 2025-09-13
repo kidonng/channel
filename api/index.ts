@@ -21,10 +21,10 @@ function processHTML(html: string) {
     .replaceAll(`href="https://t.me/${channel}"`, 'href="/"')
     .replace(new RegExp(`href="https:\/\/t\.me(?=\/${channel}\/)`, 'g'), 'href="')
     // Proxy assets via Vercel
-    .replace(/(https:)?\/\/(?=telegram\.org\/(css|js|img))|https:\/\/(?=cdn\d\.cdn-telegram\.org)/g, '/')
+    .replace(/(https:)?\/\/(?=telegram\.org\/(css|js|img))|https:\/\/(?=cdn\d\.telesco\.pe)/g, '/')
     // Proxy images via wsrv.nl
     // Must come after assets replacement
-    .replace(/\/(?=cdn\d\.cdn-telegram\.org.+\.jpg)/g, 'https://wsrv.nl/?output=webp&url=https://'),
+    .replace(/\/(?=cdn\d\.telesco\.pe.+\.jpg)/g, 'https://wsrv.nl/?output=webp&url=https://'),
   )
 
   // Note the selector is different after assets replacement

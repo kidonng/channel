@@ -1,7 +1,7 @@
 {
   "rewrites": [
     { "source": "/telegram.org/(css|js|img)/(.+)", "destination": "https://telegram.org/$1/$2" },
-    { "source": "/cdn(\\d).cdn-telegram.org/(.+)", "destination": "https://cdn$1.cdn-telegram.org/$2" },
+    { "source": "/cdn(\\d).telesco.pe/(.+)", "destination": "https://cdn$1.telesco.pe/$2" },
     { "source": "/img/tgme/pattern.svg", "destination": "https://telegram.org/img/tgme/pattern.svg" },
     { "source": "/v/", "destination": "https://t.me/v/" },
     { "source": "/(.*)", "destination": "/api" }
