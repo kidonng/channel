@@ -1,3 +1,6 @@
 node_modules
+.wrangler
+worker-configuration.d.ts
 
-.vercel
+public
+!public/robots.txt

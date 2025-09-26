@@ -1,0 +1,11 @@
+{
+  "name": "channel",
+  "compatibility_date": "2025-09-24",
+  "main": "src/main.ts",
+  "assets": {
+    "directory": "public"
+  },
+  "vars": {
+    "CHANNEL": "kichann"
+  }
+}

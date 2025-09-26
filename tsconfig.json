@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "NodeNext",
-    "strict": true,
-    "skipLibCheck": true
+    "module": "Preserve",
+    "strict": true
   }
 }
