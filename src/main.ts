@@ -56,7 +56,7 @@ export default {
           "href",
           /.*/,
           // Telegram uses customized 3.2.0
-          "https://cdn.jsdelivr.net/npm/bootstrap@3.2.0/dist/css/bootstrap.min.css",
+          "https://unpkg.com/bootstrap@3.2.0/dist/css/bootstrap.min.css",
         ),
       )
       .on(
@@ -64,7 +64,7 @@ export default {
         replaceAttribute(
           "src",
           /.*/,
-          "https://cdn.jsdelivr.net/npm/jquery@1.11.1/dist/jquery.min.js",
+          "https://unpkg.com/jquery@1.11.1/dist/jquery.min.js",
         ),
       )
       .on(
@@ -73,7 +73,7 @@ export default {
           "src",
           /.*/,
           // Telegram uses customized 1.11.4 (unavailable via CDN)
-          "https://cdn.jsdelivr.net/npm/jquery-ui-dist@1.12.0/jquery-ui.min.js",
+          "https://unpkg.com/jquery-ui-dist@1.12.0/jquery-ui.min.js",
         ),
       )
       .on(
