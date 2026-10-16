@@ -1,7 +1,5 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "Preserve",
-    "strict": true
+    "types": ["node"]
   }
 }
