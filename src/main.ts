@@ -1,5 +1,11 @@
 const imageProxy = "$&https://wsrv.nl/?output=webp&url=";
 
+function toStyle(styles: Record<string, string>) {
+  return Object.entries(styles)
+    .map(([key, value]) => `${key}: ${value};`)
+    .join(" ");
+}
+
 const removeElement = {
   element(element) {
     element.remove();
@@ -17,6 +23,25 @@ function replaceAttribute(
       element.setAttribute(name, attribute.replace(search, replace));
     },
   } satisfies HTMLRewriterElementContentHandlers;
+}
+
+class TextReplacer {
+  #buffer = "";
+
+  constructor(
+    private readonly search: string | RegExp,
+    private readonly replace: string,
+  ) {}
+
+  text(element: Text) {
+    this.#buffer += element.text;
+
+    if (element.lastInTextNode) {
+      element.replace(this.#buffer.replace(this.search, this.replace));
+    } else {
+      element.remove();
+    }
+  }
 }
 
 export default {
@@ -49,6 +74,43 @@ export default {
       .on(
         'script[src^="https://oauth.tg.dev/js/telegram-widget.js"]',
         removeElement,
+      )
+      .on(
+        [
+          // List: join button in header (visible on mobile)
+          ".tgme_channel_join_telegram",
+          // List: download button in channel info
+          ".tgme_channel_download_telegram",
+          // List: footer in channel info
+          ".tgme_footer",
+          // Post: download button in header
+          ".tgme_head_right_btn",
+          // Post: card logo
+          ".tgme_widget_message_bubble_logo",
+        ].join(),
+        removeElement,
+      )
+      .on(
+        "title",
+        new TextReplacer(/ – Telegram|Telegram: /, ""),
+      )
+      .on(
+        ".tgme_head_brand",
+        {
+          element(element) {
+            element.setAttribute("href", "/");
+            element.setAttribute(
+              "style",
+              toStyle({
+                color: "unset",
+                "font-size": "20px",
+                "font-weight": "500",
+                transform: "translateY(50%)",
+              }),
+            );
+            element.setInnerContent("Channel");
+          }
+        },
       )
       .on(
         'link[href^="//telegram.org/css/bootstrap.min.css"]',
@@ -93,6 +155,13 @@ export default {
         // Avatar
         "img",
         replaceAttribute("src", "", imageProxy),
+      )
+      .on(
+        [
+          'meta[property="og:image"]',
+          'meta[property="twitter:image"]',
+        ].join(),
+        replaceAttribute("content", "", imageProxy),
       )
       .on(
         "video",
